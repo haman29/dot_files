@@ -1,0 +1,31 @@
+autodetach on
+bell_msg "^G"
+defkanji utf-8
+defencoding utf-8
+encoding utf-8 utf-8
+defscrollback 10000
+startup_message off
+vbell off
+
+##escape (Ubuntu10.04のデフォルトは"^Aj")##
+#escape ^Jj
+escape ^Tj
+
+##caption##
+#Unix的なアレ
+#caption always "%{= wb} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wk} [%l] %{=b wb}%y/%m/%d(%D) %{=b wm}%c"
+# %Dを除いた(文字化けしてズレがあったため)
+caption always "%{= wb} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wk} [%l] %{=b wb}%y/%m/%d() %{=b wm}%c"
+# 白黒シンプル版
+#caption always "%{=r dd} %-w%{=b dd} %n %t %{-}%+w %="
+
+##bind##
+#unixi的なアレ
+bind n screen
+#bind h prev
+#bind j next
+bind l windowlist
+
+#y-mahata.s-tanno.com
+bind p prev
+bind n next
