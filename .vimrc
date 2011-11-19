@@ -16,27 +16,33 @@ filetype indent on
 filetype plugin on
 syntax on
 
-colorscheme evening 
+colorscheme evening
 
 set showcmd
-set showmatch 
+set showmatch
 set showmode
 
 set nobackup
-set smartindent 
-set incsearch 
-set ignorecase 
+set smartindent
+set ignorecase
 
+"==========================
+" tab
+"==========================
 set tabpagemax=20
 
+"==========================
 "java
+"==========================
 set sm
 set ai
 let java_highlight_all=1
 let java_highlight_functions="style"
 let java_allow_cpp_keywords=1
 
+"==========================
 "php
+"==========================
 let php_sql_query=1
 let php_htmlInStrings=1
 let php_noShortTags=1
@@ -45,14 +51,18 @@ au Syntax php set fdm=syntax
 autocmd filetype php :set makeprg=php\ -l\ %
 autocmd filetype php :set errorformat=%m\ in\ %f\ on\ line\ %l 
 
-"plugin
+"==========================
+" plugin
+"==========================
 let g:neocomplcache_enable_at_startup = 1
+let g:vimfiler_as_default_explorer = 1
 
+" 全角記号をずれないように
 if exists('&ambiwidth')
     set ambiwidth=double
 endif
-
 autocmd FileType help nnoremap <buffer> q <C-w>c
+
 
 " for Zendcoding (indent space size)
 let g:user_zen_settings =  { 'indentation':'    ' }
@@ -76,5 +86,49 @@ nnoremap k gk
 nnoremap gj j
 nnoremap gk k
 
-" ESCでIMEを確実にOFF
-inoremap <ESC> <ESC>:set iminsert=0<CR>
+" スワップファイルとバックアップファイル
+set backup
+set backupdir=/home/k-hamada/backup
+
+" search
+set hlsearch
+set incsearch
+
+"==========================
+" Vundle
+"==========================
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+filetype off                   " required!
+
+"Plugin Installing
+Bundle 'gmarik/vundle'
+" Bundle 'The-NERD-tree'
+Bundle 'The-NERD-Commenter'
+" Bundle 'Source-Explorer-srcexpl.vim'
+" Bundle 'vim-refact'
+" Bundle 'Gist.vim'
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/vimfiler'
+" Bundle 'Rainbow-Parenthesis'
+" Bundle 'taglist.vim'
+Bundle 'unite.vim'
+Bundle 'surround.vim'
+" Bundle 'ref.vim'
+" Bundle 'YankRing.vim'
+" Bundle 'proc.vim'
+" Bundle 'PDV--phpDocumentor-for-Vim'
+Bundle 'thinca/vim-quickrun'
+Bundle 'Shougo/vimshell'
+" Bundle 'Shougo/vimproc'
+Bundle 'mattn/zencoding-vim'
+" Bundle 'ujihisa/unite-colorscheme'
+" Bundle 'h1mesuke/unite-outline'
+" Bundle 'altercation/vim-colors-solarized'
+" Bundle 'Modeliner'
+" Bundle 'tsukkee/unite-tag'
+" Bundle 'ujihisa/unite-font'
+"Bundle 'unite-font'
+
+filetype plugin indent on     " required!
+
