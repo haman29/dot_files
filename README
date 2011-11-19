@@ -1,0 +1,5 @@
+設定ファイル置き場
+.dir_colors    lsした時の色つけ
+.screenrc      screen用
+.vimrc         vim用
+_vimperatorrc  vimperator用(firefox plugin)
