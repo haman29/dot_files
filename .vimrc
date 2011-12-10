@@ -3,7 +3,7 @@ set title
 set ruler
 
 set tabstop=4
-set expandtab
+"set expandtab
 set softtabstop=0
 set shiftwidth=4
 set smarttab
@@ -55,7 +55,12 @@ autocmd filetype php :set errorformat=%m\ in\ %f\ on\ line\ %l
 " plugin
 "==========================
 let g:neocomplcache_enable_at_startup = 1
+
 let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_safe_mode_by_default = 0
+
+let g:Align_xstrlen    = 3
+let g:DrChipTopLvlMenu = ''
 
 " 全角記号をずれないように
 if exists('&ambiwidth')
@@ -103,32 +108,37 @@ filetype off                   " required!
 
 "Plugin Installing
 Bundle 'gmarik/vundle'
-" Bundle 'The-NERD-tree'
 Bundle 'The-NERD-Commenter'
-" Bundle 'Source-Explorer-srcexpl.vim'
-" Bundle 'vim-refact'
-" Bundle 'Gist.vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/vimfiler'
+Bundle 'surround.vim'
+Bundle 'thinca/vim-quickrun'
+Bundle 'mattn/zencoding-vim'
+Bundle 'Shougo/unite.vim'
+Bundle 'ujihisa/unite-colorscheme'
+Bundle 'tsukkee/unite-tag'
+Bundle 'ujihisa/unite-font'
+Bundle 'unite-font'
+Bundle 'vim-scripts/svn-diff.vim'
+Bundle 'kakkyz81/evervim'
+Bundle 'vim-scripts/Align'
+
+Bundle 'The-NERD-tree'
+Bundle 'Gist.vim'
+Bundle 'ref.vim'
+Bundle 'Shougo/vimshell'
+Bundle 'Shougo/vimproc'
+" Bundle 'Source-Explorer-srcexpl.vim'
+" Bundle 'vim-refact'
 " Bundle 'Rainbow-Parenthesis'
 " Bundle 'taglist.vim'
-Bundle 'unite.vim'
-Bundle 'surround.vim'
-" Bundle 'ref.vim'
 " Bundle 'YankRing.vim'
 " Bundle 'proc.vim'
 " Bundle 'PDV--phpDocumentor-for-Vim'
-Bundle 'thinca/vim-quickrun'
-Bundle 'Shougo/vimshell'
-" Bundle 'Shougo/vimproc'
-Bundle 'mattn/zencoding-vim'
-" Bundle 'ujihisa/unite-colorscheme'
 " Bundle 'h1mesuke/unite-outline'
 " Bundle 'altercation/vim-colors-solarized'
 " Bundle 'Modeliner'
-" Bundle 'tsukkee/unite-tag'
-" Bundle 'ujihisa/unite-font'
-"Bundle 'unite-font'
+" Bundle 'vim-scripts/VimExplorer'
 
 filetype plugin indent on     " required!
 
