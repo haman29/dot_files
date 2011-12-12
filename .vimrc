@@ -62,6 +62,8 @@ let g:vimfiler_safe_mode_by_default = 0
 let g:Align_xstrlen    = 3
 let g:DrChipTopLvlMenu = ''
 
+let g:ref_phpmanual_path = $HOME . '/dot_files/dictionary/php'
+
 " 全角記号をずれないように
 if exists('&ambiwidth')
     set ambiwidth=double
@@ -122,12 +124,14 @@ Bundle 'unite-font'
 Bundle 'vim-scripts/svn-diff.vim'
 Bundle 'kakkyz81/evervim'
 Bundle 'vim-scripts/Align'
+Bundle 'ujihisa/neco-look'
 
-Bundle 'The-NERD-tree'
+" Bundle 'The-NERD-tree'
 Bundle 'Gist.vim'
 Bundle 'ref.vim'
 Bundle 'Shougo/vimshell'
 Bundle 'Shougo/vimproc'
+
 " Bundle 'Source-Explorer-srcexpl.vim'
 " Bundle 'vim-refact'
 " Bundle 'Rainbow-Parenthesis'
@@ -142,3 +146,17 @@ Bundle 'Shougo/vimproc'
 
 filetype plugin indent on     " required!
 
+"==========================
+" quickrun.vim を phpunit で使う
+"==========================
+augroup QuickRunPHPUnit
+	autocmd!
+	autocmd BufWinEnter,BufNewFile test*.php set filetype=php.unit
+	autocmd BufWinEnter,BufNewFile *Test.php set filetype=php.unit
+augroup END
+" 初期化
+let g:quickrun_config = {}
+" PHPUnit
+let g:quickrun_config['php.unit'] = {'command': 'phpunit'}
+
+let g:vimfiler_pedit_command = 'vnew'
