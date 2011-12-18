@@ -160,3 +160,6 @@ let g:quickrun_config = {}
 let g:quickrun_config['php.unit'] = {'command': 'phpunit'}
 
 let g:vimfiler_pedit_command = 'vnew'
+
+
+set smartindent
