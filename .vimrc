@@ -122,7 +122,7 @@ Bundle 'tsukkee/unite-tag'
 Bundle 'ujihisa/unite-font'
 Bundle 'unite-font'
 Bundle 'vim-scripts/svn-diff.vim'
-Bundle 'kakkyz81/evervim'
+"Bundle 'kakkyz81/evervim'
 Bundle 'vim-scripts/Align'
 Bundle 'ujihisa/neco-look'
 
@@ -163,3 +163,7 @@ let g:vimfiler_pedit_command = 'vnew'
 
 
 set smartindent
+
+syntax enable
+set background=dark
+colorscheme solarized
