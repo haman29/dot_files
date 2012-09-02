@@ -104,9 +104,10 @@ set incsearch
 "==========================
 " Vundle
 "==========================
+filetype off                   " required!
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-filetype off                   " required!
 
 "Plugin Installing
 Bundle 'gmarik/vundle'
@@ -125,6 +126,7 @@ Bundle 'vim-scripts/svn-diff.vim'
 "Bundle 'kakkyz81/evervim'
 Bundle 'vim-scripts/Align'
 Bundle 'ujihisa/neco-look'
+Bundle 'vim-jp/vimdoc-ja'
 
 " Bundle 'The-NERD-tree'
 Bundle 'Gist.vim'
@@ -163,7 +165,6 @@ let g:vimfiler_pedit_command = 'vnew'
 
 
 set smartindent
-
 syntax enable
 set background=dark
 colorscheme solarized

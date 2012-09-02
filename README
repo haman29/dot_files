@@ -10,7 +10,7 @@ _vimperatorrc  vimperator用(firefox plugin)
 $ git https://hamaan29@github.com/hamaan29/dot_files.git
 $ ln -s .vimrc dot_files/.vimrc
 $ ln -s .vim dot_files/.vim
-$ git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle/vundle.git
+$ git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle/
 $ vim
  # :BundleInstall
  # とタイプ(.vimrcに記述したpluginがインストールされる)
