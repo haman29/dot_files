@@ -7,7 +7,7 @@
 _vimperatorrc  vimperator用(firefox plugin)
 
 # use(vim)
-$ git https://hamaan29@github.com/hamaan29/dot_files.git
+$ git https://github.com/hamaan29/dot_files
 $ ln -s .vimrc dot_files/.vimrc
 $ ln -s .vim dot_files/.vim
 $ git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle/
