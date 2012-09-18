@@ -5,27 +5,37 @@ defencoding utf-8
 encoding utf-8 utf-8
 defscrollback 10000
 startup_message off
-vbell off
+vbell on
+# 別画面サポート。Vimやless使うときに便利
+altscreen on
+# 256色表示設定
+term xterm-256color
 
-##escape (Ubuntu10.04$B$N%G%U%)%k%H$O(B"^Aj")##
-#escape ^Jj
+##log##
+log on
+deflog on
+logfile "$HOME/.screen/screen-%Y%m%d-%n.log"
+
+##escape##
 escape ^Tj
 
 ##caption##
-#Unix$BE*$J%"%l(B
-#caption always "%{= wb} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wk} [%l] %{=b wb}%y/%m/%d(%D) %{=b wm}%c"
-# %D$B$r=|$$$?(B($BJ8;z2=$1$7$F%:%l$,$"$C$?$?$a(B)
-caption always "%{= wb} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wk} [%l] %{=b wb}%y/%m/%d() %{=b wm}%c"
-# $BGr9u%7%s%W%kHG(B
-#caption always "%{=r dd} %-w%{=b dd} %n %t %{-}%+w %="
+# caption always "%{= wb} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wk} [%l] %{=b wb}%y/%m/%d() %{=b wm}%c"
+
+#hardstatus on
+#hardstatus alwayslastline '%{= .b}%H%{-} %L=%-w%45L>%{=u b.}%n %t%{-}%+w %-17<%=%m/%d %02c:%s'
+#caption always '%?%F%{= bw}%:%{= wk}%?%2n%f%07=%t%='
+#sorendition '+r .b'
+
+################## hostname | windowlist  | <padded right>   04:20pm 2006.04.27 date
+caption always "%0=%{+b rk}%H %{bk}| %0L=%{mk}%>%-Lw%{= BW}%n%f* %t%{-}%+Lw%L>%?(%u)%? %{bk}|%>%=%{Yk} %=%C%a %Y.%m.%d %{bk}%100="
+
+hardstatus on
+################# | hardstatus | <padded right> load avg
+hardstatus alwayslastline "%0=%{kB}| %{kw}%h %{kB}|%=%{kR}Load: %l%100="
 
 ##bind##
-#unixi$BE*$J%"%l(B
-bind n screen
-#bind h prev
-#bind j next
+bind s screen
 bind l windowlist
-
-#y-mahata.s-tanno.com
 bind p prev
 bind n next
