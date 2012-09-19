@@ -14,7 +14,6 @@ alias ls='ls --color'
 alias ll='ls -la'
 alias la='ls -a'
 
-alias vim='/usr/local/vim-7.3/bin/vim'
 alias vi='vim'
 
 # export
