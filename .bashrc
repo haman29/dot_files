@@ -17,7 +17,8 @@ alias la='ls -a'
 alias vi='vim'
 
 # export
-export SVN_EDITOR="/usr/local/vim-7.3/bin/vim"
+export EDITOR='vim'
+export SVN_EDITOR='vim'
 
 # 複数端末でコマンド履歴を共有する
 function share_history { # 以下の内容を関数として定義
