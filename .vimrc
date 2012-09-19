@@ -94,8 +94,14 @@ nnoremap gk k
 
 " スワップファイルとバックアップファイル
 set backup
+if !isdirectory(expand("~/.vim/backup"))
+    !mkdir -p ~/.vim/backup
+endif
 set backupdir=$HOME/.vim/backup
 set swapfile
+if !isdirectory(expand("~/.vim/tmp"))
+    !mkdir -p ~/.vim/tmp
+endif
 set directory=$HOME/.vim/tmp
 
 " search
