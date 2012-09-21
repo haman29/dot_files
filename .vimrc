@@ -147,6 +147,7 @@ Bundle 'ack.vim'
 
 Bundle 'Gist.vim'
 Bundle 'tyru/open-browser.vim'
+Bundle 'altercation/vim-colors-solarized'
 
 " Bundle 'Source-Explorer-srcexpl.vim'
 " Bundle 'vim-refact'
