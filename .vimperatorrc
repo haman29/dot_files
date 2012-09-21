@@ -1,0 +1,134 @@
+"2.3.1 (created: 2010/04/07 18:56:53)
+
+set runtimepath=/Users/hamada/.vimperator
+source! /Users/hamada/.vimperatorrc.local
+
+" vim: set ft=vimperator:
+
+" ブラウザタイトルを変更
+set titlestring=Firefox
+" 表示部を出来るだけ広く
+set guioptions=
+" 検索語を強調表示
+set hlsearch
+" ヴィジュアルベル設定
+"set visualbell
+"set visualbellstyle=display:none;
+" ヒントスタイル
+"set hintstyle=z-index:5000; font-family:monospace; font-size:12px; color:white; background-color:#6666cc; border-color:ButtonShadow; border-width:0px; border-style:solid; padding:0px 1px 0px 1px; position:absolute;
+
+" 履歴
+set history=5000 
+
+" コマンド補完
+set wildoptions=auto
+ 
+" アドレス補完
+set complete=sSl 
+
+	" コピペ関係
+	map <C-c> Y
+	inoremap <C-c> <C-v><C-c>
+	map <C-a> <C-v><C-a>
+	inoremap <C-a> <C-v><C-a>
+	inoremap <C-v> <S-Insert>
+	cnoremap <C-v> <S-Insert>
+	inoremap <C-x> <S-Del>
+	cnoremap <C-x> <S-Del>
+
+"insert mode & command mode
+inoremap <C-z> <C-v><C-z>
+cnoremap <C-z> <C-v><C-z>
+
+"<ESC>あたり
+map <Caps> <esc>:google
+
+noremap <C-1> :set guioptions=r<cr>
+noremap <C-2> :set guioptions=rB<cr>
+noremap <C-3> :set guioptions=rBmT<cr>
+
+
+" twitterとか開いたときにinput要素にfocusを奪われないようにする
+set focuscontent
+
+" tabを押さなくても補完する
+set wildoptions=auto
+
+" j/k でのスクロール幅を 1行 から 3行 に変更
+noremap j 5j
+noremap k 5k
+
+cmap <Up> 5<Up>
+cmap <Down> 5<Down>
+
+map <A-j> <C-d>
+map <A-k> <C-u>
+"cmap(ex mode) 
+cmap <Up>   <S-tab>
+cmap <Down> <Tab>
+
+" h/l に戻るや進むを割り当て
+map h <A-Left>
+map l <A-Right>   
+
+" H/L や ← → でタブ移動
+map H gT
+map L gt
+map <Left>  gT
+map <Right> gt
+map a gT
+map s gt
+
+" 選択文字列で Google 検索
+map <C-g> YP
+
+" Shift + ← → で現在のタブの位置変更
+map <S-Right> :tabmove! +1<CR>
+map <S-Left>  :tabmove! -1<CR>
+
+"いろいろなバーを表示させる
+set guioptions=r
+
+" 読み込んだ事を出力
+"echo _vimperatorrc sourced
+
+"quick mark
+qmark g https://mail.google.com/
+qmark r http://www.google.com/reader/view/
+
+qmark x https://mixi.jp/
+qmark t http://www.twitter.com/
+qmark f http://facebook.com/
+qmark e https://www.evernote.com/Home.action
+qmark h http://hootsuite.com/
+qmark z http://buzzurl.jp/
+
+qmark d http://d.hatena.ne.jp/kyohei_hamada/
+qmark b http://b.hatena.ne.jp/kyohei_hamada/
+
+qmark c http://www.alc.co.jp/
+qmark k http://www.kuronekoyamato.co.jp/
+
+qmark w http://haman29.sakura.ne.jp/wp/wp-admin/post-new.php
+qmark l http://livedoor.blogcms.jp/blog/rehabilitation29/article/edit
+qmark 2 http://blog.livedoor.jp/geisoku29/
+qmark a https://www.google.com/adsense/v3/app#home
+qmark n https://www.google.com/analytics/settings/
+
+
+js <<EOM
+// j,kキーでスムーススクロールする
+(function(){
+  var scrollAmount = 400;
+  // direction : positive (down) / negative (up)
+  function smoothScroll(amount, direction) {
+    var half = Math.floor(amount / 2);
+    window.content.window.wrappedJSObject.scrollBy(0, half * direction);
+    if (half >= 1) 
+      setTimeout(function(){smoothScroll(half, direction)}, 10);
+  }
+  mappings.addUserMap([modes.NORMAL], ["j"], "", function(){ smoothScroll(scrollAmount,  1)},{rhs:"down"}); 
+  mappings.addUserMap([modes.NORMAL], ["k"], "", function(){ smoothScroll(scrollAmount, -1)},{rhs:"up"}); 
+})();
+EOM
+
