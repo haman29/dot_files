@@ -148,6 +148,7 @@ Bundle 'Lokaltog/vim-powerline'
 
 Bundle 'Gist.vim'
 Bundle 'tyru/open-browser.vim'
+Bundle 'altercation/vim-colors-solarized'
 
 if exists("s:bootstrap") && s:bootstrap
     unlet s:bootstrap

@@ -1,11 +1,5 @@
 設定ファイル置き場
 
-# contents
-.dir_colors    lsした時の色つけ
-.screenrc      screen用
-.vimrc         vim用
-_vimperatorrc  vimperator用(firefox plugin)
-
 # use(vim)
 $ git clone https://github.com/hamaan29/dot_files
 $ sh setup.sh
