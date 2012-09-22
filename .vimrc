@@ -144,21 +144,10 @@ Bundle 'ujihisa/neco-look'
 Bundle 'thinca/vim-ref'
 Bundle 'vim-jp/vimdoc-ja'
 Bundle 'ack.vim'
+Bundle 'Lokaltog/vim-powerline'
 
 Bundle 'Gist.vim'
 Bundle 'tyru/open-browser.vim'
-
-" Bundle 'Source-Explorer-srcexpl.vim'
-" Bundle 'vim-refact'
-" Bundle 'Rainbow-Parenthesis'
-" Bundle 'taglist.vim'
-" Bundle 'YankRing.vim'
-" Bundle 'proc.vim'
-" Bundle 'PDV--phpDocumentor-for-Vim'
-" Bundle 'h1mesuke/unite-outline'
-" Bundle 'altercation/vim-colors-solarized'
-" Bundle 'Modeliner'
-" Bundle 'vim-scripts/VimExplorer'
 
 if exists("s:bootstrap") && s:bootstrap
     unlet s:bootstrap
