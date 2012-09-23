@@ -11,7 +11,7 @@ alias cp='cp -i'
 alias rm='rm -i'
 
 alias ls='ls --color -F'
-alias ll='ls -la'
+alias ll='ls -l'
 alias la='ls -a'
 
 alias vi='vim'
