@@ -52,6 +52,8 @@ autocmd Syntax php set fdm=syntax
 autocmd filetype php :set makeprg=php\ -l\ % " :make で実行
 autocmd filetype php :set errorformat=%m\ in\ %f\ on\ line\ %l 
 let g:ref_phpmanual_path = $HOME . '/dot_files/dictionary/php'
+" switch 文でインデントする
+let g:PHP_vintage_case_default_indent = 1
 
 "==========================
 " plugin
@@ -185,7 +187,7 @@ colorscheme solarized
 " neocomplecache
 "==========================
 " Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
+let g:acp_enableAtStartup = 1
 " Use neocomplcache.
 let g:neocomplcache_enable_at_startup = 1
 " Use smartcase.
