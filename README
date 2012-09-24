@@ -1,5 +1,5 @@
 設定ファイル置き場
-
-# use(vim)
-$ git clone https://github.com/hamaan29/dot_files
-$ sh setup.sh
+# use
+git clone https://github.com/hamaan29/dot_files
+cd dot_files
+sh setup.sh
