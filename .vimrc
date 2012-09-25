@@ -187,7 +187,7 @@ colorscheme solarized
 " neocomplecache
 "==========================
 " Disable AutoComplPop.
-let g:acp_enableAtStartup = 1
+let g:acp_enableAtStartup = 0
 " Use neocomplcache.
 let g:neocomplcache_enable_at_startup = 1
 " Use smartcase.
