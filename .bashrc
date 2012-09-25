@@ -36,4 +36,9 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # プロンプトの表示
-export PS1="\[\033[0;37m\][\[\033[0;32m\]\t \[\033[1;36m\]\u\[\033[0;37m\]@\h \$(git_branch) \[\033[0;32m\]\w\[\033[0;37m\]]\n\$ "
+git_branch() {
+    __git_ps1 '(git:%s)'
+}
+PS1="\[\e[0;36m\]\u@\h\[\e[m\] \[\e[0;34m\]\w\[\e[m\] \[\e[0;33m\]\$(git_branch) \n\[\e[m\]\$ "
+export PS1
+
