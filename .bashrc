@@ -39,6 +39,10 @@ fi
 git_branch() {
     __git_ps1 '(git:%s)'
 }
-PS1="\[\e[0;36m\]\u@\h\[\e[m\] \[\e[0;34m\]\w\[\e[m\] \[\e[0;33m\]\$(git_branch) \n\[\e[m\]\$ "
+if [ -f /etc/bash_completion ]; then
+    PS1="\[\e[0;36m\]\u@\h\[\e[m\] \[\e[0;34m\]\w\[\e[m\] \[\e[0;33m\]\$(git_branch) \n\[\e[m\]\$ "
+else
+    PS1="\[\e[0;36m\]\u@\h\[\e[m\] \[\e[0;34m\]\w\[\e[m\] \[\e[0;33m\] \n\[\e[m\]\$ "
+fi
 export PS1
 
