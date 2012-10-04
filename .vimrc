@@ -147,10 +147,13 @@ Bundle 'thinca/vim-ref'
 Bundle 'vim-jp/vimdoc-ja'
 Bundle 'ack.vim'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'altercation/vim-colors-solarized'
 
+if has('python')
+    Bundle 'kakkyz81/evervim'
+endif
 Bundle 'Gist.vim'
 Bundle 'tyru/open-browser.vim'
-Bundle 'altercation/vim-colors-solarized'
 
 if exists("s:bootstrap") && s:bootstrap
     unlet s:bootstrap
@@ -311,3 +314,8 @@ inoremap jj <ESC>
 "ビジュアルモードで選択したテキストがクリップボードに
 set clipboard+=autoselect
 set clipboard+=unnamed
+
+"
+" ever-vim
+" 
+let g:evervim_splitoption=''
