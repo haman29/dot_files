@@ -319,3 +319,5 @@ set clipboard+=unnamed
 " ever-vim
 " 
 let g:evervim_splitoption=''
+
+source $VIMRUNTIME/macros/matchit.vim
