@@ -166,9 +166,9 @@ filetype plugin indent on     " required!
 " quickrun.vim を phpunit で使う
 "==========================
 augroup QuickRunPHPUnit
-	autocmd!
-	autocmd BufWinEnter,BufNewFile test*.php set filetype=php.unit
-	autocmd BufWinEnter,BufNewFile *Test.php set filetype=php.unit
+    autocmd!
+    autocmd BufWinEnter,BufNewFile test*.php set filetype=php.unit
+    autocmd BufWinEnter,BufNewFile *Test.php set filetype=php.unit
 augroup END
 " 初期化
 let g:quickrun_config = {}
@@ -285,7 +285,7 @@ smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
 " SuperTab like snippets behavior.
 imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ?
-\ "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+            \ "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 
 "==========================
 " open-browser
@@ -305,9 +305,6 @@ noremap # #zz
 noremap g* g*zz
 noremap g# g#zz
 
-"フォーカスを失ったら自動的に上書き。
-au FocusLost * :wa
-
 "insertモードでjj押せばノーマルモードに。
 inoremap jj <ESC>
 
@@ -320,4 +317,5 @@ set clipboard+=unnamed
 " 
 let g:evervim_splitoption=''
 
+" % の強化
 source $VIMRUNTIME/macros/matchit.vim
