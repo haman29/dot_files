@@ -13,7 +13,7 @@ set backspace=indent,eol,start
 
 set encoding=utf-8
 "set fileencodings=iso-2022-jp,euc-jp,utf-8,ucs-2,cp932,sjis
-set fileencodings=utf-8,euc-jp,utf-8,ucs-2,cp932,sjis
+set fileencodings=utf-8,euc-jp,ucs-2,cp932,sjis,iso-2022-jp
 
 filetype indent on
 filetype plugin on
@@ -148,6 +148,7 @@ Bundle 'vim-jp/vimdoc-ja'
 Bundle 'ack.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'kana/vim-fakeclip'
 
 if has('python')
     Bundle 'kakkyz81/evervim'
