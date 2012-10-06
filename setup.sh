@@ -1,6 +1,8 @@
 #!/bin/bash
+# TODO 冗長すぎ
 ln -s ~/dot_files/.screenrc ~/.screenrc
 ln -s ~/dot_files/.vimrc ~/.vimrc
+ln -s ~/dot_files/.gitconfig ~/.gitconfig
 
 if [ ! -L ~/.bashrc ] && [ -e ~/.bashrc ]; then
     mv ~/.bashrc ~/.bashrc.org
