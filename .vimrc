@@ -298,6 +298,11 @@ vmap <Leader>o <Plug>(openbrowser-open)
 nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
 vnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
 
+"==========================
+" The-NERD-Commenter
+" ==========================
+let NERDSpaceDelims = 1
+
 " 検索箇所を真ん中に
 noremap n nzz
 noremap N Nzz
