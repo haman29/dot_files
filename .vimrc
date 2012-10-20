@@ -13,7 +13,8 @@ set backspace=indent,eol,start
 
 set encoding=utf-8
 "set fileencodings=iso-2022-jp,euc-jp,utf-8,ucs-2,cp932,sjis
-set fileencodings=utf-8,euc-jp,ucs-2,cp932,sjis,iso-2022-jp
+"set fileencodings=utf-8,euc-jp,ucs-2,cp932,sjis,iso-2022-jp
+set fileencodings=utf-8,ucs-bom,iso-2022-jp,euc-jp,cp932
 
 filetype indent on
 filetype plugin on
@@ -190,10 +191,10 @@ colorscheme solarized
 "==========================
 " neocomplecache
 "==========================
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
 " Use neocomplcache.
 let g:neocomplcache_enable_at_startup = 1
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
 " Use smartcase.
 let g:neocomplcache_enable_smart_case = 1
 " Use camel case completion.
