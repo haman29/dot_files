@@ -147,7 +147,7 @@ let g:user_zen_settings =  { 'indentation':'    ' }
 let mapleader = ","
 
 "ノーマルモードではセミコロンをコロンに。
-nnoremap ; :
+" nnoremap ; :
 
 "==========================
 "special Key 
@@ -205,8 +205,8 @@ colorscheme solarized
 "==========================
 " neocomplecache
 "==========================
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
+" enable AutoComplPop.
+let g:acp_enableAtStartup = 1
 " Use neocomplcache.
 let g:neocomplcache_enable_at_startup = 1
 " Use smartcase.
@@ -342,3 +342,5 @@ autocmd QuickfixCmdPost make,grep,grepadd,vimgrep if len(getqflist()) != 0 | cop
 " ctags
 set tags=~/.tags,./tags,./TAGS,tags,TAGS 
 
+" tabnew
+map <leader>t :tabnew 
