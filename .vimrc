@@ -48,6 +48,8 @@ Bundle 'kana/vim-metarw'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/vim-metarw-simplenote'
 
+Bundle 'vim-scripts/sudo.vim'
+
 if has('python')
     Bundle 'kakkyz81/evervim'
 endif
@@ -344,3 +346,7 @@ set tags=~/.tags,./tags,./TAGS,tags,TAGS
 
 " tabnew
 map <leader>t :tabnew 
+
+" sudo で開いていないファイルをsudoで保存する
+cmap w!! %!sudo tee > /dev/null %
+>>>>>>> e844a0e063629ce3bbb398365a7725cddc8ad1c2
