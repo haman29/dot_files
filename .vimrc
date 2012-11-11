@@ -48,6 +48,8 @@ Bundle 'kana/vim-metarw'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/vim-metarw-simplenote'
 
+Bundle 'vim-scripts/sudo.vim'
+
 if has('python')
     Bundle 'kakkyz81/evervim'
 endif
@@ -342,3 +344,6 @@ autocmd QuickfixCmdPost make,grep,grepadd,vimgrep if len(getqflist()) != 0 | cop
 " ctags
 set tags=~/.tags,./tags,./TAGS,tags,TAGS 
 
+" Will allow you to use :w!! to write to a file using sudo if you forgot to
+" sudo vim file" (it will prompt for sudo password when writing)
+cmap w!! %!sudo tee > /dev/null %
