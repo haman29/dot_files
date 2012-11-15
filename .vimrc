@@ -349,4 +349,3 @@ map <leader>t :tabnew
 
 " sudo で開いていないファイルをsudoで保存する
 cmap w!! %!sudo tee > /dev/null %
->>>>>>> e844a0e063629ce3bbb398365a7725cddc8ad1c2

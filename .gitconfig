@@ -8,4 +8,6 @@
 [core]
     editor = vim
 [push]
+    default = tracking
+[pull]
 	default = tracking

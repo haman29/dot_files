@@ -46,3 +46,5 @@ else
 fi
 export PS1
 
+# grep に色付け
+export GREP_OPTIONS='--color=auto'
