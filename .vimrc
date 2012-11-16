@@ -334,6 +334,7 @@ set clipboard+=unnamed
 " ever-vim
 " 
 let g:evervim_splitoption=''
+let g:evervim_devtoken='S=s999:U=9ee99c9:E=999d9999c99:C=99a99a99999:P=9cd:A=en-devtoken:H=cd99999de9999c99b999d99d999cb9f9'
 
 " % の強化
 source $VIMRUNTIME/macros/matchit.vim
