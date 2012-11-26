@@ -55,6 +55,7 @@ if has('python')
 endif
 Bundle 'Gist.vim'
 Bundle 'tyru/open-browser.vim'
+Bundle 'joonty/vim-xdebug'
 
 if exists("s:bootstrap") && s:bootstrap
     unlet s:bootstrap
