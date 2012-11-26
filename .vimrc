@@ -57,6 +57,8 @@ Bundle 'Gist.vim'
 Bundle 'tyru/open-browser.vim'
 Bundle 'joonty/vim-xdebug'
 
+Bundle 'kchmck/vim-coffee-script'
+
 if exists("s:bootstrap") && s:bootstrap
     unlet s:bootstrap
     BundleInstall
@@ -182,19 +184,24 @@ set hlsearch
 set incsearch
 
 "==========================
-" quickrun.vim を phpunit で使う
+" quickrun.vim
 "==========================
+" 初期化
+let g:quickrun_config = {}
+
+" PHPUnit
+let g:quickrun_config['php.unit'] = {'command': 'phpunit'}
 augroup QuickRunPHPUnit
     autocmd!
     autocmd BufWinEnter,BufNewFile test*.php set filetype=php.unit
     autocmd BufWinEnter,BufNewFile *Test.php set filetype=php.unit
 augroup END
-" 初期化
-let g:quickrun_config = {}
-" PHPUnit
-let g:quickrun_config['php.unit'] = {'command': 'phpunit'}
 
-let g:vimfiler_pedit_command = 'vnew'
+" coffee script
+let g:quickrun_config['coffee'] = {'command' : 'coffee'}
+" 保存時に自動コンパイル
+autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
+
 
 
 "==========================
@@ -351,3 +358,6 @@ map <leader>t :tabnew
 
 " sudo で開いていないファイルをsudoで保存する
 cmap w!! %!sudo tee > /dev/null %
+
+" vimfiler
+let g:vimfiler_pedit_command = 'vnew'

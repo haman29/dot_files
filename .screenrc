@@ -1,11 +1,12 @@
+vbell on
 autodetach on
+startup_message off
+
 bell_msg "^G"
 defkanji utf-8
 defencoding utf-8
 encoding utf-8 utf-8
 defscrollback 10000
-startup_message off
-vbell on
 # 別画面サポート。Vimやless使うときに便利
 altscreen on
 # 256色表示設定
@@ -18,14 +19,6 @@ logfile "$HOME/.screen/screen-%Y%m%d-%n.log"
 
 ##escape##
 escape ^Tj
-
-##caption##
-# caption always "%{= wb} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wk} [%l] %{=b wb}%y/%m/%d() %{=b wm}%c"
-
-#hardstatus on
-#hardstatus alwayslastline '%{= .b}%H%{-} %L=%-w%45L>%{=u b.}%n %t%{-}%+w %-17<%=%m/%d %02c:%s'
-#caption always '%?%F%{= bw}%:%{= wk}%?%2n%f%07=%t%='
-#sorendition '+r .b'
 
 ################## hostname | windowlist  | <padded right>   04:20pm 2006.04.27 date
 caption always "%0=%{+b rk}%H %{bk}| %0L=%{mk}%>%-Lw%{= BW}%n%f* %t%{-}%+Lw%L>%?(%u)%? %{bk}|%>%=%{Yk} %=%C%a %Y.%m.%d %{bk}%100="
