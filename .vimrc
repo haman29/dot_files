@@ -49,15 +49,18 @@ Bundle 'mattn/webapi-vim'
 Bundle 'mattn/vim-metarw-simplenote'
 
 Bundle 'vim-scripts/sudo.vim'
+Bundle 'kchmck/vim-coffee-script'
 
 if has('python')
     Bundle 'kakkyz81/evervim'
 endif
 Bundle 'Gist.vim'
 Bundle 'tyru/open-browser.vim'
-Bundle 'joonty/vim-xdebug'
+" Bundle 'joonty/vim-xdebug.git'
+Bundle 'DBGp-client'
 
-Bundle 'kchmck/vim-coffee-script'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rails'
 
 if exists("s:bootstrap") && s:bootstrap
     unlet s:bootstrap
@@ -120,11 +123,10 @@ let java_allow_cpp_keywords=1
 "==========================
 let php_sql_query=1
 let php_htmlInStrings=1
-let php_folding=1
+" let php_folding=1
 autocmd Syntax php set fdm=syntax
 autocmd filetype php :set makeprg=php\ -l\ % " :make で実行
 autocmd filetype php :set errorformat=%m\ in\ %f\ on\ line\ %l 
-let g:ref_phpmanual_path = $HOME . '/dot_files/dictionary/php'
 " switch 文でインデントする
 let g:PHP_vintage_case_default_indent = 1
 
@@ -306,7 +308,7 @@ if has('conceal')
 endif
 
 " Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
+" let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
 
 "==========================
 " open-browser
@@ -318,7 +320,7 @@ vmap <Leader>o <Plug>(openbrowser-open)
 nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
 vnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
 
-"==========================
+" ==========================
 " The-NERD-Commenter
 " ==========================
 let NERDSpaceDelims = 1
@@ -334,13 +336,9 @@ noremap g# g#zz
 "insertモードでjj押せばノーマルモードに。
 inoremap jj <ESC>
 
-"ビジュアルモードで選択したテキストがクリップボードに
-set clipboard+=autoselect
-set clipboard+=unnamed
-
-"
+" ==========================
 " ever-vim
-" 
+" ==========================
 let g:evervim_splitoption=''
 let g:evervim_devtoken='S=s999:U=9ee99c9:E=999d9999c99:C=99a99a99999:P=9cd:A=en-devtoken:H=cd99999de9999c99b999d99d999cb9f9'
 
@@ -351,13 +349,41 @@ source $VIMRUNTIME/macros/matchit.vim
 autocmd QuickfixCmdPost make,grep,grepadd,vimgrep if len(getqflist()) != 0 | copen | endif
 
 " ctags
-set tags=~/.tags,./tags,./TAGS,tags,TAGS 
+set tags=~/.tags,./tags,./TAGS,tags,TAGS
 
 " tabnew
-map <leader>t :tabnew 
+map <leader>t :tabnew<Space>
 
 " sudo で開いていないファイルをsudoで保存する
 cmap w!! %!sudo tee > /dev/null %
 
 " vimfiler
 let g:vimfiler_pedit_command = 'vnew'
+
+" yank/paste/delete でクリップボードを使う required kana/vim-fakeclip
+set clipboard=unnamed
+
+" ==========================
+" ruby
+" ==========================
+" 余分なスペースをハイライト
+let ruby_space_errors=1
+
+" Rubyのオムニ補完を設定(ft-ruby-omni)
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
+
+
+" ==========================
+" ref.vim
+" ==========================
+nnoremap <Leader>rr :<C-U>Ref refe<Space>
+nnoremap <Leader>rp :<C-U>Ref phpmanual<Space>
+
+" ruby
+let g:ref_refe_cmd = "rurema" " reqired rurema
+let g:ref_refe_version = 2
+
+" php
+let g:ref_phpmanual_path = $HOME . '/dot_files/dictionary/php'

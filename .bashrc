@@ -30,9 +30,17 @@ PROMPT_COMMAND='share_history' # 上記関数をプロンプト毎に自動実�
 shopt -u histappend # .bash_history追記モードは不要なのでOFFに
 export HISTSIZE=9999 # 履歴のMAX保存数を指定
 
-# bash_completion 補完機能の追加
+# bash_completion
+# linux
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
+fi
+# mac
+if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
+    . /opt/local/etc/profile.d/bash_completion.sh
+fi
+if [ -f /opt/local/share/git-core/git-prompt.sh ]; then
+    source /opt/local/share/git-core/git-prompt.sh
 fi
 
 # プロンプトの表示
@@ -40,6 +48,8 @@ git_branch() {
     __git_ps1 '(git:%s)'
 }
 if [ -f /etc/bash_completion ]; then
+    PS1="\[\e[0;36m\]\u@\h\[\e[m\] \[\e[0;34m\]\w\[\e[m\] \[\e[0;33m\]\$(git_branch) \n\[\e[m\]\$ "
+elif [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
     PS1="\[\e[0;36m\]\u@\h\[\e[m\] \[\e[0;34m\]\w\[\e[m\] \[\e[0;33m\]\$(git_branch) \n\[\e[m\]\$ "
 else
     PS1="\[\e[0;36m\]\u@\h\[\e[m\] \[\e[0;34m\]\w\[\e[m\] \[\e[0;33m\] \n\[\e[m\]\$ "
